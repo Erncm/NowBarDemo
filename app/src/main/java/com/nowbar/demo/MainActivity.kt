@@ -103,7 +103,7 @@ class MainActivity : Activity() {
             .setChronometerCountDown(true)
             .setContentIntent(contentIntent())
         if (Build.VERSION.SDK_INT >= 36) {
-            b.setRequestPromotedOngoing(true)
+            b.addExtras(Bundle().apply { putBoolean("android.requestPromotedOngoing", true) })
             b.setStyle(
                 Notification.ProgressStyle()
                     .setProgress(progress)
